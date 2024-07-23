@@ -21,6 +21,7 @@ body{
     margin: 0;
     padding: 0;
     position: relative;
+    background-color: #F6F6F6;
 }
 .header{
     position: absolute;
@@ -71,6 +72,9 @@ body{
 }
 .header__item:hover{
     border-bottom: 1px solid #F79C1B;
+}
+.header__img{
+    display: none;
 }
 .header__phone{
     display: flex;
@@ -383,6 +387,7 @@ body{
 .footer__info-text{
     font-weight: 300;
     font-size: 16px;
+    margin: 7px;
 }
 .footer__info-text-orange{
     color: #F79C1B;
@@ -391,12 +396,20 @@ body{
     .header{
         padding: 20px;
         align-items: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-content: space-between;
     }
     .header__navbar{
         display: none;
     }
     .header__application{
         display: none;
+    }
+    .header__img{
+        display: flex;
+        height: 60px;
+        width: 60px;
     }
     .application__header{
         font-size: 22px;
@@ -456,6 +469,7 @@ body{
         row-gap: 80px;
         column-gap: 0; 
         flex-wrap: wrap;
+        padding: 10px;
     }
     .application__block {
         flex-direction: column;
@@ -482,11 +496,56 @@ body{
         display: none;
     }
     .description__info {
+        padding: 60px;
         height: auto;
         width: 100vw;
+        align-items: flex-start;
+        text-align: left;
+        background-color: rgba(245, 245, 245, 0.79);
+    }
+    .info__title {
+        margin: 0;
+        margin-bottom: 20px;
+    }
+    .info__text {
+        width: auto;
+        line-height: 26px;
+    }
+    .img-1{
+        background-image: url("img/1cc6c715ea3449d37ffcfa365dcceb13.jpeg");
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .img-2{
+        background-image: url("img/1476bcb0aee80f27638cbbe549909ff9.jpeg");
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .info__button-1{
+        margin-top: 30px;
+        margin-bottom: 100px;
+        width: 230px;
+    }
+    .info__button-2{
+        margin-top: 30px;
+        margin-bottom: 10px;
+        width: 230px;
     }
     .footer__line{
         display: none;
+    }
+    .footer{
+        padding: 20px;
+    }
+    .footer__block{
+        text-align: center;
+        order: 1;
+        width: 100%;
+    }
+    .header__logo--iner {
+        margin-right: 0;
     }
     .footer__info {
         gap: 0;
@@ -495,5 +554,13 @@ body{
     .footer__info-text {
         width: 450px;
         text-align: center;
+    }
+    .footer__container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        align-content: center;
+        flex-wrap: wrap;
+        height: 250px;
     }
 }
