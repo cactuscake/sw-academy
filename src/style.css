@@ -29,14 +29,14 @@ body{
     width: 100%;
     padding-left: 140px;
     padding-right: 140px;
-    background-color:rgba(26, 26, 26, .5);;
+    background-color:rgba(26, 26, 26, .5);
     height: 103px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
-.header__logo--iner{
+.header__logo--inner{
     display: flex;
     flex-direction: column;
     width: 173px;
@@ -48,6 +48,22 @@ body{
     color: #F79C1B;
 }
 .header__logo--desc{
+    margin: 0;
+    color: #F6F6F680;
+    font-size: 12px;
+}
+.logo--inner{
+    display: flex;
+    flex-direction: column;
+    width: 173px;
+    margin-right: 58px;
+}
+.logo{
+    font-weight: 600;
+    font-size: 43px;
+    color: #F79C1B;
+}
+.logo--desc{
     margin: 0;
     color: #F6F6F680;
     font-size: 12px;
@@ -101,8 +117,10 @@ body{
 }
 .header__button:hover{
     background-color: #F79C1B;
+    transition: background-color 1s;
     color:#FFFFFF;
 }
+
 .main{
     gap: 47px;
     display: flex;
@@ -137,7 +155,7 @@ body{
     height: 550px;
     width: 550px;
 }
-.application__header{
+.main__header{
     text-align: center;
     display: flex;
     font-size: 46px;
@@ -146,23 +164,25 @@ body{
 .application__header-auth{
     color: #1A1A1A;
 }
-.application__info{
+.main__info{
     font-size: 20px;
     margin-bottom: 0;
     width: 450px;
     font-weight: 300;
     text-align: center;
 }
-.application__place{
+.main__place{
     font-size: 18px;
     font-weight: bold;
 }
-.application__button{
+.main__button{
     display: flex;
 }
-.application__button:hover{
+.main__button:hover{
     box-shadow: 4px 5px 5px 2px rgba(0, 0, 0, 0.479);
+    transition: box-shadow 1s;
 }
+
 .kitchen{
     padding: 140px;
     display: flex;
@@ -181,11 +201,11 @@ body{
     flex-direction: row;
     justify-content: space-between;
 }
-.container__block{
+.kitchen__block{
     flex-direction: column;
     display: flex;
 }
-.block__img{
+.kitchen__img{
     height: 230px;
     width: 360px;
 }
@@ -200,16 +220,17 @@ body{
 .img__scale img:hover{
     transform: scale(1.2);
 }
-.block__title{
+.kitchen__title-block{
     display: flex;
     font-weight: 500;
     font-size: 18px;
 }
-.block__text{
+.kitchen__text{
     font-weight: 300;
     font-size: 16px;
     width: 360px;
 }
+
 .application{
     height: 512px;
     display: flex;
@@ -236,7 +257,7 @@ body{
     align-items: center;
     gap: 10px;
 }
-.block__input{
+.application__input{
     width: 250px;
     height: 50px;
     /* font-size: 13px; */
@@ -245,11 +266,12 @@ body{
     background: transparent;
     border-radius: 0;
 }
-.block__button{
+.application__button{
     width: 250px;
 }
-.block__button:hover{
+.application__button:hover{
     box-shadow: 4px 5px 5px 2px rgba(0, 0, 0, 0.479);
+    transition: box-shadow 1s;
 }
 .description{
     display: flex;
@@ -272,6 +294,7 @@ body{
 }
 .info__button:hover{
     box-shadow: 4px 5px 5px 2px rgba(0, 0, 0, 0.479);
+    transition: box-shadow 1s;
 }
 .description__container{
     display: flex;
@@ -345,6 +368,7 @@ body{
     color: #FFFFFF;
 }
 .footer-menu{
+    line-height: 26px;
     display: flex;
     flex-direction: column;
     text-decoration: none;
@@ -363,6 +387,11 @@ body{
     text-transform: uppercase;
     color: #F79C1B; 
     border: 2px solid #F79C1B;
+}
+.button__footer:hover{
+    background-color: #F79C1B;
+    transition: background-color 1s;
+    color:#FFFFFF;
 }
 .footer__line{
     width: 100vw;
@@ -411,14 +440,14 @@ body{
         height: 60px;
         width: 60px;
     }
-    .application__header{
+    .main__header{
         font-size: 22px;
     }
-    .application__info{
+    .main__info{
         font-size: 15px;
         width: 330px;
     }
-    .application__button {
+    .main__button {
         display: none;
     }
     .main{
@@ -448,7 +477,7 @@ body{
     .application__title{
         margin-top: 0;
     }
-    .block__input{
+    .application__input{
         width: 400px;
     }
     .footer__container {
@@ -544,7 +573,7 @@ body{
         order: 1;
         width: 100%;
     }
-    .header__logo--iner {
+    .footer__logo--inner {
         margin-right: 0;
     }
     .footer__info {
