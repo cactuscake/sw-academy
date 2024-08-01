@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Music&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+*{
+    box-sizing: border-box;
+}
+input[type="text"] {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0; 
+}
+.title-underline:hover{
+    text-decoration: underline;
+    text-decoration-color: #F79C1B;
+}
+body{
+    font-family: "Rubik", sans-serif;
+    width: 100vw; 
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: #F6F6F6;
+}
+
+.header{
+    position: absolute;
+    color: #FFFFFF ;
+    width: 100%;
+    padding-left: 140px;
+    padding-right: 140px;
+    background-color:rgba(26, 26, 26, .5);
+    height: 103px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.header__logo--inner{
+    display: flex;
+    flex-direction: column;
+    width: 173px;
+    margin-right: 58px;
+}
+.header__logo{
+    font-weight: 600;
+    font-size: 43px;
+    color: #F79C1B;
+}
+.header__logo--desc{
+    margin: 0;
+    color: #F6F6F680;
+    font-size: 12px;
+}
+.logo--inner{
+    display: flex;
+    flex-direction: column;
+    width: 173px;
+    margin-right: 58px;
+}
+.logo{
+    font-weight: 600;
+    font-size: 43px;
+    color: #F79C1B;
+}
+.logo--desc{
+    margin: 0;
+    color: #F6F6F680;
+    font-size: 12px;
+}
+.header__navbar{
+    font-size: 16px;
+    font-weight: 300;
+    display: flex;
+    flex-grow: 1;
+    gap: 30px;
+    align-items: center;
+    width: 431px;
+}
+.header__application{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+.header__item{
+    text-decoration: none;
+    color: inherit;
+}
+.header__item:hover{
+    border-bottom: 1px solid #F79C1B;
+}
+.header__img{
+    display: none;
+}
+.header__phone{
+    display: flex;
+    align-items: center;
+}
+.button{
+    align-items: center;
+    padding: 15px 50px 15px 50px; 
+    background-color: #F79C1B;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    color: #FFFFFF; 
+    border: 2px solid #F79C1B;
+}
+.header__button{
+    display: flex;
+    align-items: center;
+    padding: 0.5em 1.5em; 
+    background-color: transparent;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    color: #F79C1B; 
+    border: 2px solid #F79C1B;
+}
+.header__button:hover{
+    background-color: #F79C1B;
+    transition: background-color 1s;
+    color:#FFFFFF;
+}
