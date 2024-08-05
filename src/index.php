@@ -4,21 +4,6 @@ include "framework/framework.php";
 
 $a = new \PDO("mysql:dname=default;host=sw-mysql", "default", "123");
 
-/*
-dd($USER->create([
-    "name" => "Alex",
-    "email" => "alex@mail.ru",
-    "password" => "alex123",
-]));
-*/
-//dd($USER->getById(1));
-/*
-dd($USER->create([
-"name" => "#_Danil_228_pro_#",
-"email" => "ya_debil.ru",
-"password" => "123",
-]));
-*/
 $navbarItems = [
     "item1" => "Шкафы купе",
     "item2" => "Тороговая мебель",
