@@ -3,7 +3,7 @@
 namespace Framework\Models;
 
 use Framework\CDatabase;
-use Framework\Validators\UserValidator;
+use Framework\Validators\Validator;
 
 abstract class Model
 {
@@ -47,17 +47,15 @@ abstract class Model
     public static function create(array $data): bool
     {
 
-        if (UserValidator::validate($data) !== true) {
-            print_r(UserValidator::validate($data));
+        if (Validator::validate($data) !== true) {
+            print_r(Validator::validate($data));
             return false;
         }
 
         $fields = array_keys($data);
-        //var_dump($data);
         $placeholders = array_map(function ($field) {
             return ":{$field}";
         }, $fields);
-        //var_dump($placeholders);
         $query = "INSERT INTO " . static::$table . " (" . implode(',', $fields) . ") 
         VALUES (" . implode(',', $placeholders) . ")";
         $stmt = CDatabase::getInstanse()->connection->prepare($query);
@@ -67,8 +65,8 @@ abstract class Model
 
     public static function update(int $id, array $data): bool
     {
-        if (UserValidator::validate($data) !== true) {
-            print_r(UserValidator::validate($data));
+        if (Validator::validate($data) !== true) {
+            print_r(Validator::validate($data));
             return false;
         }
 
@@ -79,7 +77,6 @@ abstract class Model
         }
 
         $query = "UPDATE " . static::$table . " SET " . implode(',', $fields) . " WHERE id = :id";
-        $data['id'] = $id;
         $stmt = CDatabase::getInstanse()->connection->prepare($query);
 
         return $stmt->execute($data);
@@ -98,6 +95,15 @@ abstract class Model
         return $this->data[$name] ?? null;
     }
 
+    public function __set(string $name, $value)
+    {
+        if (in_array($name, $this->fillable)) {
+            return;
+        }
+
+        $this->data[$name] = $value;
+    }
+
     public function __call(string $name, array $args)
     {
         if (strpos($name, 'get') !== 0) {
@@ -107,23 +113,4 @@ abstract class Model
         $fieldName = strtolower(substr($name, 3));
         return $this->data[$fieldName] ?? null;
     }
-
-    /*
-    public function authenticate($email, $password)
-    {
-        $query = "SELECT * FROM " . static::$table . " WHERE email = :email";
-        $stmt = CDatabase::getInstanse()->connection->prepare($query);
-        $stmt->execute(['email' => $email]);
-        $user = $stmt->fetch(\PDO::FETCH_ASSOC);
-        if ($user && $password === $user['password']) {
-            return $user;
-        }
-        return false;
-    }
-
-    public function authorize($user, $requiredRole)
-    {
-        return $user['role'] === $requiredRole;
-    }
-    */
 }
