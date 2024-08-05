@@ -15,7 +15,7 @@ class CDatabase
     protected string $password = "";
     protected string $user = "";
 
-    public \PDO $connection;
+    public readonly \PDO $connection;
 
     public function __construct()
     {
@@ -47,10 +47,5 @@ class CDatabase
             $this->user,
             $this->password,
         );
-        /*
-        dd(
-            $this->connection->query("SELECT 1")
-        );
-        */
     }
 }

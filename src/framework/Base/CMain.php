@@ -10,7 +10,6 @@ class CMain
         include $this->getComponentPath($component) . "/component.php";
         $styles = file_get_contents($this->getTemplatePath($component, $template) . "/style.css");
         echo "<style>$styles</style>";
-        // $arParams = array_merge($arParams, $params);
         include $this->getTemplatePath($component, $template) . "/template.php";
         $content = ob_get_clean();
 

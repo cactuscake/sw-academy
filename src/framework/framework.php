@@ -8,6 +8,5 @@ use Framework\CMain;
 use Framework\Config;
 
 $APPLICATION = new CMain();
-$DB = new CDatabase();
 $USER = new CUser(["name", "email", "password", "role"]);
 $CONFIG = Config::getInstanse();
