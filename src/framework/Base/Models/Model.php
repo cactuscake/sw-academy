@@ -3,6 +3,7 @@
 namespace Framework\Models;
 
 use Framework\CDatabase;
+use Framework\Validators\UserValidator;
 
 abstract class Model
 {
@@ -45,10 +46,18 @@ abstract class Model
 
     public static function create(array $data): bool
     {
+
+        if (UserValidator::validate($data) !== true) {
+            print_r(UserValidator::validate($data));
+            return false;
+        }
+
         $fields = array_keys($data);
+        //var_dump($data);
         $placeholders = array_map(function ($field) {
             return ":{$field}";
         }, $fields);
+        //var_dump($placeholders);
         $query = "INSERT INTO " . static::$table . " (" . implode(',', $fields) . ") 
         VALUES (" . implode(',', $placeholders) . ")";
         $stmt = CDatabase::getInstanse()->connection->prepare($query);
@@ -58,6 +67,11 @@ abstract class Model
 
     public static function update(int $id, array $data): bool
     {
+        if (UserValidator::validate($data) !== true) {
+            print_r(UserValidator::validate($data));
+            return false;
+        }
+
         $fields = [];
 
         foreach ($data as $key => $value) {

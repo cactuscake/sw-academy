@@ -15,7 +15,9 @@
                     <p class="footer__block-text"><?= $contactItem ?></a>
                 <?php endforeach;?>
             </div>
-            <button class="button button__footer"><?= $arResult["foot_button"]?></button>
+            <form action="auth.html">
+                <button class="button button__footer" href="auth.html"><?= $arResult["foot_button"]?></button>
+            </form>
         </div>
         <hr class="footer__line">
         <div class="footer__info">
@@ -24,3 +26,4 @@
             <p class="footer__info-text"><?= $arResult["bottom"][2]?></p>
         </div>
     </footer>
+    

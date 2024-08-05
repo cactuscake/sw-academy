@@ -4,6 +4,22 @@ include "framework/framework.php";
 
 $a = new \PDO("mysql:dname=default;host=sw-mysql", "default", "123");
 
+//нормальный пользователь
+/*
+dd($USER->create([
+    "name" => "Alex",
+    "email" => "alex@mail.ru",
+    "password" => "alex123",
+]));
+*/
+//еблан
+
+dd($USER->create([
+"name" => "#_Danil_228_pro_#",
+"email" => "ya_debil.ru",
+"password" => "hui",
+]));
+
 $navbarItems = [
     "item1" => "Шкафы купе",
     "item2" => "Тороговая мебель",

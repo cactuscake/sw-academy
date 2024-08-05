@@ -1,41 +1,26 @@
 <?php
 
-namespace Framework\UserValidator;
+namespace Framework\Validators;
 
-class UserValidator
+use Framework\Validators\Validator;
+use Framework\Traits\ValidationException;
+
+class UserValidator extends Validator
 {
-    private static $errors = [];
-
-    public static function validate(array $data)
-    {
-        UserValidator::clearErrors();
-
-        if ($data["name"] !== null) {
-            UserValidator::validateName($data["name"]);
-        }
-
-        if ($data["email"] !== null) {
-            UserValidator::validateEmail($data["email"]);
-        }
-
-        if ($data["password"] !== null) {
-            UserValidator::validatePassword($data["password"]);
-        }
-
-        if (UserValidator::hasErrors()) {
-            return UserValidator::getErrors();
-        }
-
-        return true;
-    }
-
     public static function validateName($name)
     {
+        $errors = [];
+ 
         if (empty($name)) {
             self::$errors['name'] = 'Name is required.';
         } elseif (!preg_match('/^[a-zA-Z\s]+$/', $name)) {
             self::$errors['name'] = 'Name can only contain letters and spaces.';
         }
+        /*
+        if (empty($errors)) {
+            throw new ValidationException($errors);
+        }
+        */
     }
 
     public static function validateEmail($email)
@@ -45,6 +30,11 @@ class UserValidator
         } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             self::$errors['email'] = 'Invalid email format.';
         }
+        /*
+        if (!empty($errors)) {
+            throw new ValidationException($errors);
+        }
+        */
     }
 
     public static function validatePassword($password)
@@ -54,29 +44,10 @@ class UserValidator
         } elseif (strlen($password) < 6) {
             self::$errors['password'] = 'Password must be at least 6 characters long.';
         }
-    }
-/*
-    public static function validateRole($role) {
-        $validRoles = ['admin', 'user'];
-        if (empty($role)) {
-            self::$errors['role'] = 'Role is required.';
-        } elseif (!in_array($role, $validRoles)) {
-            self::$errors['role'] = 'Invalid role. Allowed roles are: admin, user.';
+        /*
+        if (!empty($errors)) {
+            throw new ValidationException($errors);
         }
-    }
-*/
-    public static function getErrors()
-    {
-        return self::$errors;
-    }
-
-    public static function hasErrors()
-    {
-        return !empty(self::$errors);
-    }
-
-    public static function clearErrors()
-    {
-        self::$errors = [];
+        */
     }
 }
