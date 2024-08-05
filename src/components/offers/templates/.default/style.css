@@ -1,0 +1,33 @@
+.offers{
+    display: flex;
+    flex-direction: column;
+    padding: 160px 300px 160px 300px;
+    align-items: center;
+}
+.offers__title{
+    text-align: center;
+    margin-top: 0;
+    font-weight: 500;
+    font-size: 40px;
+    margin-bottom: 80px;
+}
+.offers-block__title{
+    font-weight: 500;
+    font-size: 24px;
+}
+.offers-block__text{
+    font-weight: 300px;
+    font-size: 16px;
+}
+.offers__container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 800px;
+    row-gap: 80px;
+    column-gap: 130px;
+}
+.offers__block{
+    width: 320px;
+}
