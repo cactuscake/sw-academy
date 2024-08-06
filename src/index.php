@@ -58,7 +58,7 @@ $footerBottomItems = ["2024 “Мебель.ру” Все права защищ
     <title>Мебель</title>
 </head>
 <body>
-    <?php $APPLICATION->includeComponent("header", ".default", [ "logo" => "МЕБЕЛЬ",
+    <?php $APPLICATION->includeHeader([ "logo" => "МЕБЕЛЬ",
     "desk" => "Центр мебельных технологий",
     "navbar" => $navbarItems,
     "number" => "+7 3452 00-00-00",
@@ -107,7 +107,7 @@ $footerBottomItems = ["2024 “Мебель.ру” Все права защищ
     "delivery_subtitle" => $kitchenDeliveryItems,*/
     ]);?>
 
-    <?php $APPLICATION->includeComponent("footer", ".default", ["foot_title" => "МЕБЕЛЬ",
+    <?php $APPLICATION->includeFooter(["foot_title" => "МЕБЕЛЬ",
     "foot_subtitle" => "Центр мебельных технологий",
     "foot_button" => "Авторизоваться",
     "menu_name" => "Меню",
@@ -116,5 +116,6 @@ $footerBottomItems = ["2024 “Мебель.ру” Все права защищ
     "contact" => $footerContactItems,
     "bottom" => $footerBottomItems,
     ]);?>
+    
 </body>
 </html>

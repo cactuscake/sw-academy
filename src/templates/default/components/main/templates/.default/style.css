@@ -1,0 +1,61 @@
+.main{
+    gap: 47px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("img/1cc6c715ea3449d37ffcfa365dcceb13.jpeg");
+    background-size: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    justify-content: center;
+    height: 718px;
+    width: 100vw;
+}
+.main-auth{
+    background-image: url("img/7d242b61d07335630b78f2cfcd3f8a78.png");
+    background-position: center;
+    height: 890px;
+}
+.main__application{
+    color: #eb7b13;
+    height: 278px;
+    width: 760px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color:rgba(26, 26, 26, .5);;
+}
+.main__application-auth{
+    background-color:rgba(255, 255, 255, 0.89);
+    gap: 50px;
+    height: 550px;
+    width: 550px;
+}
+.main__header{
+    text-align: center;
+    display: flex;
+    font-size: 46px;
+    margin-bottom: 0;
+}
+.application__header-auth{
+    color: #1A1A1A;
+}
+.main__info{
+    font-size: 20px;
+    margin-bottom: 0;
+    width: 450px;
+    font-weight: 300;
+    text-align: center;
+}
+.main__place{
+    font-size: 18px;
+    font-weight: bold;
+}
+.main__button{
+    display: flex;
+}
+.main__button:hover{
+    box-shadow: 4px 5px 5px 2px rgba(0, 0, 0, 0.479);
+    transition: box-shadow 1s;
+}
