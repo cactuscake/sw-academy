@@ -20,7 +20,6 @@ class Config
         $dotenv->load();
     }
 
-
     public function getEnv(string $key, $default = null)
     {
         return $_ENV[$key] ?? $default;

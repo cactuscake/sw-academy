@@ -26,4 +26,3 @@
             <p class="footer__info-text"><?= $arParams["bottom"][2]?></p>
         </div>
     </footer>
-    
