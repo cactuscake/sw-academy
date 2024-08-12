@@ -1,4 +1,4 @@
-<section class="kitchen" id="kitchen" data-params='<?= json_encode($arParams)?>'>
+<section class="kitchen" id="kitchenSecond" data-params='<?= json_encode($arParams)?>'>
         <h2 class="kitchen__title">{{kitchen_type}}</h2>
         <div class="kitchen__container">
             <div class="kitchen__block">
@@ -37,4 +37,4 @@
         </div>
     </section>
 
-<script src="templates/default/js/kitchen.js"></script>
+<script src="templates/default/js/kitchenSecond.js"></script>

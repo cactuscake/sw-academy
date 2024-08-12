@@ -41,6 +41,14 @@ $productionItems = [
     "Вы можете посетить нас (Тюмень, ул.Калинина, 22/1) в любое удобное для вас время, предварительно записавшись к директору компании через сайт, либо по телефону +7 345 00-00-00."
 ];
 
+$offersTitle = ["Сделаем по экскизу","Подстроимся под бюджет","Гарантия 5 лет", "Проект на этапе ремонта"];
+
+$offersText = [
+"Если у вас есть пожелания, изготовим кухню согласно вашим примерам",
+"Для  эскиза подберем материалы эконом, стандарт или премиум класса",
+"Наша компания занимается изготовлением мебели много лет, мы отвечаем за качество",
+"Предусмотрим все нюансы и дадим рекомендации по расположению элементов кухни"];
+
 $footerMenuItems = ["Шкафы купе","Кухни","Торговое оборудование", "О компании", "Контакты"];
 
 $footerContactItems = ["info@mebel.ru", "г.Тюмень, ул. Калинина, 22/1", "+7 (3452) 00-00-00"];
@@ -56,8 +64,11 @@ $footerBottomItems = ["2024 “Мебель.ру” Все права защищ
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Мебель</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
 </head>
 <body>
+
     <?php $APPLICATION->includeHeader([ "logo" => "МЕБЕЛЬ",
     "desk" => "Центр мебельных технологий",
     "navbar" => $navbarItems,
@@ -84,7 +95,7 @@ $footerBottomItems = ["2024 “Мебель.ру” Все права защищ
     "application_button" => "Отправить",
     ]);?>
 
-    <?php $APPLICATION->includeComponent("kitchen", ".default", ["kitchen_type" => "Виды кухонь",
+    <?php $APPLICATION->includeComponent("kitchenSecond", ".default", ["kitchen_type" => "Виды кухонь",
     "title_type" => $kitchenTypeItems,
     "text_type" => $kitchenTypeText,
     "kitchen_style" => "Стили кухонь",
@@ -103,8 +114,8 @@ $footerBottomItems = ["2024 “Мебель.ру” Все права защищ
     "description_button" => "ЗАПИСАТЬСЯ",
     ]);?>
     
-    <?php $APPLICATION->includeComponent("offers", ".default", [/*"delivery_title" => "Доставка",
-    "delivery_subtitle" => $kitchenDeliveryItems,*/
+    <?php $APPLICATION->includeComponent("offers", ".default", ["offers_title" => "Что мы предлагаем",
+    "block_title" => $offersTitle, "block_text" => $offersText,
     ]);?>
 
     <?php $APPLICATION->includeFooter(["foot_title" => "МЕБЕЛЬ",
@@ -116,6 +127,7 @@ $footerBottomItems = ["2024 “Мебель.ру” Все права защищ
     "contact" => $footerContactItems,
     "bottom" => $footerBottomItems,
     ]);?>
+    
     
 </body>
 </html>
