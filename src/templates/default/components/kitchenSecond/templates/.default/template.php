@@ -37,4 +37,4 @@
         </div>
     </section>
 
-<script src="templates/default/js/kitchenSecond.js"></script>
+<script type="module" src="/templates/default/js/kitchenSecond.js"></script>
