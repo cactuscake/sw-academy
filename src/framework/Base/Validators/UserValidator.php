@@ -10,7 +10,7 @@ class UserValidator extends Validator
     public static function validateName($name)
     {
         $errors = [];
- 
+
         if (empty($name)) {
             self::$errors['name'] = 'Name is required.';
         } elseif (!preg_match('/^[a-zA-Z\s]+$/', $name)) {
