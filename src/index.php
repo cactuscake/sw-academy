@@ -65,7 +65,22 @@ $footerBottomItems = ["2024 “Мебель.ру” Все права защищ
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Мебель</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    
+    <script>
+        const CONFIG = JSON.parse('<?= $APPLICATION->frontendConfig()?>')
+        const APP = {
+            runComponentAction: async (component, action, payload = null, headers = {}) => {
+                return await fetch(CONFIG.endpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        ...headers,
+
+                    },
+                    body: JSON.stringify({component, action, payload},)
+                }).then(response => response.json())
+            }
+        }
+    </script>
 </head>
 <body>
 

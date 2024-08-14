@@ -16,11 +16,6 @@ class UserValidator extends Validator
         } elseif (!preg_match('/^[a-zA-Z\s]+$/', $name)) {
             self::$errors['name'] = 'Name can only contain letters and spaces.';
         }
-        /*
-        if (empty($errors)) {
-            throw new ValidationException($errors);
-        }
-        */
     }
 
     public static function validateEmail($email)
@@ -30,11 +25,6 @@ class UserValidator extends Validator
         } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             self::$errors['email'] = 'Invalid email format.';
         }
-        /*
-        if (!empty($errors)) {
-            throw new ValidationException($errors);
-        }
-        */
     }
 
     public static function validatePassword($password)
@@ -44,10 +34,5 @@ class UserValidator extends Validator
         } elseif (strlen($password) < 6) {
             self::$errors['password'] = 'Password must be at least 6 characters long.';
         }
-        /*
-        if (!empty($errors)) {
-            throw new ValidationException($errors);
-        }
-        */
     }
 }
