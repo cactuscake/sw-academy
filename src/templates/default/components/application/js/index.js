@@ -1,13 +1,13 @@
 import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
 
-const data = JSON.parse(document.querySelector("#application").dataset.params)
+const data = JSON.parse(document.querySelector("#application").dataset.application)
 
 createApp({
 
     data() {
         return {
             ...data,
-            form:{
+            form: {
                 name: '',
                 tel: '',
             }

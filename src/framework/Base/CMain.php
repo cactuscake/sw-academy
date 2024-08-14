@@ -86,4 +86,11 @@ class CMain
     {
         return $_SERVER["DOCUMENT_ROOT"];
     }
+
+    public function frontendConfig(): false|string
+    {
+        return json_encode([
+            'endpoint' => '/api.php'
+        ]);
+    }
 }

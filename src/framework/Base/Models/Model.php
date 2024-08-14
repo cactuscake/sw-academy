@@ -47,11 +47,6 @@ abstract class Model
     public static function create(array $data): bool
     {
 
-        if (Validator::validate($data) !== true) {
-            print_r(Validator::validate($data));
-            return false;
-        }
-
         $fields = array_keys($data);
         $placeholders = array_map(function ($field) {
             return ":{$field}";
@@ -65,10 +60,6 @@ abstract class Model
 
     public static function update(int $id, array $data): bool
     {
-        if (Validator::validate($data) !== true) {
-            print_r(Validator::validate($data));
-            return false;
-        }
 
         $fields = [];
 
